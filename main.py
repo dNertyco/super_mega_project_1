@@ -10,6 +10,7 @@ from stats_module import *
 from export_module import *
 from schedule_module import *
 from visualization_module import *
+from png_export_module import *
 
 
 def get_available_dates():
@@ -47,6 +48,7 @@ menu = [
     "Смотреть статистику",
     "Смотреть визуализацию",
     "Сменить дату отображения информации",
+    "Экспорт недели в PNG",
     "Экспорт в CSV",
 ]
 
@@ -74,5 +76,7 @@ while True:
             view_stat(classes, date)
         case "Смотреть визуализацию":
             create_visualizations()
+        case "Экспорт недели в PNG":
+            export_week_schedule_to_png(classes, date)
         case "Экспорт в CSV":
             export_to_csv(classes)
